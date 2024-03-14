@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Redesign Turnin</title>
+    <link rel="stylesheet" href="styles.css" /> 
+  </head>
+
+  <!-- page content goes into <body> -->
+  <body id="body">
+    <h1>Responsive Redesign Portfolio</h1>
+    <div class="imgs">
+        <img id="side-img" alt="Website a image" src="./assets/a.png"/>
+        <img id="side-img" alt="Website b image" src="./assets/b.png"/>
+    </div>
+    <h4>Website A (left) and website B (right); significant changes include: buttons changing color when a user hovers over them, 
+        ,the colors of the text on the buttons were altered, and a dividing line was added in between each available appointment.</h4>
+    <br>
+    <h2>Introduction</h2>
+    <div class="paragraphs">
+        <p>
+            This project is an example of AB testing, a common testing method used involving two interfaces (referred to as A and B): where one set of users 
+            completes a task on interface A and another set of users completes the same task on interface B. Using the data collected from the users
+            performing tasks on the interfaces, one can make decisions on which of the two to move forwards with.
+        </p>
+    </div>
+    <div class="paragraphs">
+        <p>
+            For the project, I designed a website (labelled B above), with the intention of improving on the design of an original website (labelled A above)
+            Then, I collected data from users in our class' studio section and will be analyzing the data in the body of this report. Through this report I am trying
+            to determine whether the changes I made to the interface truly made a significant difference in user experience for those using the website. AB testing will be 
+            useful in helping determine this, because we can find trends and significant differences in different metrics across both sites to infer trends on whether 
+            the changes made helped or not.
+        </p>
+    </div>
+
+    
+    <h2>Hypothesis</h2>
+    <div class="paragraphs">
+        <p>
+            <ol>
+                <li>Misclick Rate</li>
+                <ul>
+                    <li>Null Hypothesis: Both designs have the same misclick rate.</li>
+                    <li>Alternative Hypothesis: Design B has a lower misclick rate than design A</li>
+                </ul>
+                <li>Time on Page</li>
+                <ul>
+                    <li>Null Hypothesis: Users spend the same amount of time on both pages.</li>
+                    <li>Alternative Hypothesis: Users spend less time on page B compared to page A.</li>
+                </ul>
+                <li>Time to First Click - The time it takes for the user to click the first time</li>
+                <ul>
+                    <li>Null Hypothesis: The time until the first click is the same between both interfaces.</li>
+                    <li>Alternative Hypothesis: The time until the first click is less in interface B compared to interface A.</li>
+                </ul>
+            </ol>
+        </p>
+    </div>
+
+    <h2>Statistics Tests</h2>
+    <div class="paragraphs">
+        <p> 
+            I will be using a one-tailed t-test for each metric. This is because all of my hypotheses are comparing
+            differences in the values of metrics across interface A and B. Furthermore, my null hypotheses is checking whether or not
+            there is no correlation between the two interfaces, so if a very low p-value is returned then we can conclude there is very little
+            difference in the metric results. Hence, the values returned from the one-tailed t-test will be useful for drawing conclusions
+            for both my null and alternative hypotheses.
+        </p>
+    </div>
+    <p>
+        Note: In terms of the metrics used (from one-tailed p-test):
+        <ul>
+            <li>The avrerage gives us an idea of how a new user using a specific interface is expected to perform.</li>
+            <li>The variance tells us how different a lot of the values in the dataset were from the average.</li>
+            <li>The t-score tells us how different the values were between the first and second datasets (greater means more difference)</li>
+            <li>The p-score tells us whether data collected A has significantly greater values compared to B (1 means more likely different, 0 means less likely different)</li>
+        </ul>
+    </p>
+    
+    <div class="paragraphs">
+        <p>
+            <ul>
+                <li>
+                    Misclick rate: For this, I converted all TRUE values in the spreadsheet to 1 and all FALSE values to 0. Some important statistics are as follows:
+                        <ul>
+                            <li>Average (A): 0.5; Variance (A): 0.26</li>
+                            <li>Average (B): 0.0; Variance (B): 0.00</li>
+                            <li>t-score: 4.73</li>
+                            <li>p-value: 0.999</li>
+                        </ul>
+                    From these statistics, we can determine that 50% of users who tested the interface misclicked in interface A, while 0% of users 
+                    who tested misclicked in interface B. Furthermore, the t-score and p-values are relatively high, suggesting there is indeed support
+                    for my alternative hypothesis: namely, we find a statistically significant difference in the misclick rates for interface A and B suggesting
+                    interface B has a lower misclick rate than interface A.
+                </li>
+                <br>
+                <li>
+                    Time on page: 
+                        <ul>
+                            <li>Average (A): 36139; Variance (A): 212313713</li>
+                            <li>Average (B): 10333; Variance (B): 42829678</li>
+                            <li>t-score: 7.91</li>
+                            <li>p-value: 0.999</li>
+                        </ul>
+                    From these statistics, we can determine that on average, users using interface A spent 36139 milliseconds on the page, while
+                    users using interface B spent 10333 milliseconds on the page. This supports the alternative hypothesis that users are indeed spending
+                    less time on interface B compared to A. This is suppported by the high t-score and p-value, suggesting there is indeed a significant difference 
+                    between the times spent on interface A and B. I found it interesting that the variance values for both interfaces were quite high, suggesting
+                    the time people spend on each interface can vary drastically. However, given the other statistics, we can conclude there is a statistically
+                    significant difference in the time spent on interface A versus interface B, rejecting the null hypothesis.
+                </li>
+                <br>
+                <li>
+                    Time until first click: 
+                        <ul>
+                            <li>Average (A): 14477; Variance (A): 70695020</li>
+                            <li>Average (B): 6210; Variance (B): 2285283</li>
+                            <li>t-score: 4.73</li>
+                            <li>p-value: 0.999</li>
+                        </ul>
+                    From these statistics, we can determine that on average, users using interface A spent 14477 milliseconds before their first click, while
+                    users using interface B spent 6210 milliseconds. This supports the alternative hypothesis that users are spending less time until their first
+                    click in interface B compared to A. This is suppported by the high t-score and p-value, suggesting there is indeed a significant difference 
+                    between the times until the first click on interface A and B. Similarly to the "time on page" metric, the variance values for both interfaces were quite high, suggesting that
+                    the time people spend until their first click can vary drastically. However, given the other statistics, we can conclude there is a statistically
+                    significant difference in the time until the first click on interface A versus B, rejecting the null hypothesis.
+                </li>
+            </ul>
+        </p>
+    </div>
+    
+
+    <h2>Summary/Evaluation</h2>
+    <div class="paragraphs">
+        <p>
+            Overall, I collected data from 24 people in my studio section and determined that there is a statistically significant trend between all three metrics
+            selected: namely, interface B has a lower misclick rate than interface A, users spend less time on interface B compared to interface A,
+            and the time until the first click is less in interface B compared to interface A. 
+        </p>
+    </div>
+    <div class="paragraphs">
+        <p>
+            This conclusion is supported by the significantly different average values between interface A data and interface B data across the three metrics (in all three metrics
+            the average of A metrics were lower than that of B). This was further supported by the high t-score and p-value values which suggested that there is 
+            indeed a significant difference in interfaces A and B across the metrics selected, thus nullifying the null hypotheses.
+        </p>
+    </div>
+    <div class="paragraphs">
+        <p>
+            Although this suggests that interface B is a more user friendly interface compared to interface A, how we collected the data might have
+            also affected results. Since the group of people testing interface A and B are the same group of people, they may have gotten better at using
+            the interface after completing the test for interface A, and thus, were able to complete a similar test for interface B with much less time spent
+            and fewer misclicks.
+        </p>
+    </div>
+  </body>
